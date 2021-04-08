@@ -1,5 +1,5 @@
 ﻿using Models;
-using Respository;
+using Respository.Interfaces;
 using Services.Interfaces;
 using System.Collections.Generic;
 
@@ -7,8 +7,8 @@ namespace Services
 {
     public class PeliculaService : IPeliculaService
     {
-        private readonly PeliculaRepository _peliculaRepository;
-        public PeliculaService(PeliculaRepository peliculaRepository) 
+        private readonly IPeliculaRepository _peliculaRepository;
+        public PeliculaService(IPeliculaRepository peliculaRepository)
         {
             _peliculaRepository = peliculaRepository;
         }
@@ -20,7 +20,7 @@ namespace Services
 
         public Pelicula Get(int Id)
         {
-            return _peliculaRepository.Get(Id);
+           return _peliculaRepository.Get(Id);
         }
     }
 }

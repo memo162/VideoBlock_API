@@ -2,6 +2,7 @@
 using Application.Interfaces;
 using Models;
 using Services;
+using Services.Interfaces;
 using System.Collections.Generic;
 
 namespace Application
@@ -9,9 +10,9 @@ namespace Application
     public class PeliculaApplication : IPeliculasApplication
     {
 
-        public readonly PeliculaService _peliculaService;
+        public readonly IPeliculaService _peliculaService;
 
-        public PeliculaApplication(PeliculaService peliculaService)
+        public PeliculaApplication(IPeliculaService peliculaService)
         {
             _peliculaService = peliculaService;
         }

@@ -1,17 +1,19 @@
-﻿using Models;
+﻿using Microsoft.Extensions.Configuration;
+using Models;
 using Respository.Interfaces;
 using System.Collections.Generic;
 using System.Linq;
 
 namespace Respository
 {
-    public class PeliculaRepository : IPeliculaReposiroty
+    public class PeliculaRepository : IPeliculaRepository
     {
-        public readonly RepositoryDbContext _repositoryDbContext;
 
-        public PeliculaRepository(RepositoryDbContext repositoryDbContext) 
+        private readonly IReposirotyDbProvider _reposirotyDbProvider;
+
+        public PeliculaRepository(IReposirotyDbProvider reposirotyDbProvider)
         {
-            _repositoryDbContext = repositoryDbContext;
+            _reposirotyDbProvider = reposirotyDbProvider;
         }
 
         public List<Pelicula> Get()
@@ -21,7 +23,8 @@ namespace Respository
 
         public Pelicula Get(int Id)
         {
-            return _repositoryDbContext.Peliculas.Where(p => p.Id == Id).FirstOrDefault();
+            var dbContext = _reposirotyDbProvider.GetDbContext();
+            return dbContext.Peliculas.Where(p => p.Id == Id).FirstOrDefault();
         }
     }
 }
