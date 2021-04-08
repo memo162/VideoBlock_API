@@ -1,10 +1,9 @@
-﻿
-using Models;
+﻿using Models;
 using System.Collections.Generic;
 
-namespace Application.Interfaces
+namespace Respository.Interfaces
 {
-    public interface IPeliculasApplication
+    public interface IPeliculaReposiroty
     {
         List<Pelicula> Get();
         Pelicula Get(int Id);

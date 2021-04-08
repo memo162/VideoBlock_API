@@ -2,9 +2,9 @@
 using Models;
 using System.Collections.Generic;
 
-namespace Application.Interfaces
+namespace Services.Interfaces
 {
-    public interface IPeliculasApplication
+    public interface IPeliculaService
     {
         List<Pelicula> Get();
         Pelicula Get(int Id);

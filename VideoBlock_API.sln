@@ -5,9 +5,13 @@ VisualStudioVersion = 16.0.30621.155
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "VideoBlock_API", "VideoBlock_API\VideoBlock_API.csproj", "{7DEB836A-B9BF-400F-B28C-9DBB83715669}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Models", "Models\Models.csproj", "{9EA96116-687E-4EDC-BCD7-9805881F15A3}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Models", "Models\Models.csproj", "{D31FC44A-ACAD-4B3B-A2B8-44E96F728442}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Application", "Application\Application.csproj", "{43CC9677-10EF-4649-965C-0075CE94041C}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Application", "Application\Application.csproj", "{1199A930-CD87-4820-9DC7-2A70D9183936}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Services", "Services\Services.csproj", "{CF877F81-20C9-4B73-B4FE-6C46234D86F6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Respository", "Respository\Respository.csproj", "{C6B0B236-8C00-4C71-ADD0-664F698B90DA}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -19,14 +23,22 @@ Global
 		{7DEB836A-B9BF-400F-B28C-9DBB83715669}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7DEB836A-B9BF-400F-B28C-9DBB83715669}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7DEB836A-B9BF-400F-B28C-9DBB83715669}.Release|Any CPU.Build.0 = Release|Any CPU
-		{9EA96116-687E-4EDC-BCD7-9805881F15A3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{9EA96116-687E-4EDC-BCD7-9805881F15A3}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{9EA96116-687E-4EDC-BCD7-9805881F15A3}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{9EA96116-687E-4EDC-BCD7-9805881F15A3}.Release|Any CPU.Build.0 = Release|Any CPU
-		{43CC9677-10EF-4649-965C-0075CE94041C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{43CC9677-10EF-4649-965C-0075CE94041C}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{43CC9677-10EF-4649-965C-0075CE94041C}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{43CC9677-10EF-4649-965C-0075CE94041C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D31FC44A-ACAD-4B3B-A2B8-44E96F728442}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D31FC44A-ACAD-4B3B-A2B8-44E96F728442}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D31FC44A-ACAD-4B3B-A2B8-44E96F728442}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D31FC44A-ACAD-4B3B-A2B8-44E96F728442}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1199A930-CD87-4820-9DC7-2A70D9183936}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1199A930-CD87-4820-9DC7-2A70D9183936}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1199A930-CD87-4820-9DC7-2A70D9183936}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1199A930-CD87-4820-9DC7-2A70D9183936}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CF877F81-20C9-4B73-B4FE-6C46234D86F6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CF877F81-20C9-4B73-B4FE-6C46234D86F6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CF877F81-20C9-4B73-B4FE-6C46234D86F6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CF877F81-20C9-4B73-B4FE-6C46234D86F6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C6B0B236-8C00-4C71-ADD0-664F698B90DA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C6B0B236-8C00-4C71-ADD0-664F698B90DA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C6B0B236-8C00-4C71-ADD0-664F698B90DA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C6B0B236-8C00-4C71-ADD0-664F698B90DA}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
