@@ -2,6 +2,7 @@
 using Microsoft.Extensions.Configuration;
 using Models;
 using Respository.Interfaces;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -37,6 +38,7 @@ namespace Respository
         {
             using (var dbContext = _reposirotyDbProvider.GetDbContext())
             {
+                pelicula.FechaCreacion = DateTime.UtcNow;
                 await dbContext.Peliculas.AddAsync(pelicula);
                 await dbContext.SaveChangesAsync();
 
@@ -48,6 +50,7 @@ namespace Respository
         {
             using (var dbContext = _reposirotyDbProvider.GetDbContext())
             {
+                pelicula.FechaActualizacion = DateTime.UtcNow;
                 dbContext.Update(pelicula);
                 await dbContext.SaveChangesAsync();
                 return await dbContext.Peliculas.Where(p => p.Id == pelicula.Id).FirstOrDefaultAsync();

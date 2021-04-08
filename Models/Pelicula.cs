@@ -3,10 +3,8 @@
 namespace Models
 {
     [Table("Peliculas")]
-    public class Pelicula
+    public class Pelicula : BaseModel
     {
-        public int Id { get; set; }
-
         [Column("Titulo")]
         public string Titulo { get; set; }
 
@@ -21,8 +19,5 @@ namespace Models
 
         [Column("Cantidad_Inventario")]
         public int Cantidad { get; set; }
-
-        [Column("Eliminado")]
-        public bool Eliminado { get; set; }
     }
 }
