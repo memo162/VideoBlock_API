@@ -2,25 +2,42 @@
 using Respository.Interfaces;
 using Services.Interfaces;
 using System.Collections.Generic;
+using System.Threading.Tasks;
 
 namespace Services
 {
     public class PeliculaService : IPeliculaService
     {
         private readonly IPeliculaRepository _peliculaRepository;
+
         public PeliculaService(IPeliculaRepository peliculaRepository)
         {
             _peliculaRepository = peliculaRepository;
         }
 
-        public List<Pelicula> Get()
+        public async Task<Pelicula> Create(Pelicula pelicula)
         {
-            throw new System.NotImplementedException();
+            return await _peliculaRepository.Create(pelicula);
         }
 
-        public Pelicula Get(int Id)
+        public async Task Delete(int id)
         {
-           return _peliculaRepository.Get(Id);
+            await _peliculaRepository.Delete(id);
+        }
+
+        public async Task<List<Pelicula>> Get()
+        {
+            return await _peliculaRepository.Get();
+        }
+
+        public async Task<Pelicula> Get(int id)
+        {
+           return await _peliculaRepository.Get(id);
+        }
+
+        public async Task<Pelicula> Update(Pelicula pelicula)
+        {
+            return await _peliculaRepository.Update(pelicula);
         }
     }
 }

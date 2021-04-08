@@ -3,7 +3,9 @@ using Application.Interfaces;
 using Models;
 using Services;
 using Services.Interfaces;
+using System;
 using System.Collections.Generic;
+using System.Threading.Tasks;
 
 namespace Application
 {
@@ -17,14 +19,41 @@ namespace Application
             _peliculaService = peliculaService;
         }
 
-        public List<Pelicula> Get()
+        public async Task<List<Pelicula>> Get()
         {
-            throw new System.NotImplementedException();
+            return await _peliculaService.Get();
         }
 
-        public Pelicula Get(int Id)
+        public async Task<Pelicula> Get(int id)
         {
-            return _peliculaService.Get(Id);
+            return await _peliculaService.Get(id);
+        }
+
+        public async Task<Pelicula> Post(Pelicula pelicula)
+        {
+            if (pelicula.Id == 0) 
+            {
+                return await _peliculaService.Create(pelicula);
+            }
+            else
+            {
+                return await _peliculaService.Update(pelicula);
+            }
+        }
+
+        public async Task<bool> Delete(int id) 
+        {
+            try
+            {
+                await _peliculaService.Delete(id);
+                return true;
+            }
+            catch (Exception)
+            {
+                return false;
+                throw;
+            }
+
         }
     }
 }

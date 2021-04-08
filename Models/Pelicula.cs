@@ -21,5 +21,8 @@ namespace Models
 
         [Column("Cantidad_Inventario")]
         public int Cantidad { get; set; }
+
+        [Column("Eliminado")]
+        public bool Eliminado { get; set; }
     }
 }
