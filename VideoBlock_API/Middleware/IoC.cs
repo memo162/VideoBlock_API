@@ -15,7 +15,16 @@ namespace VideoBlock_API.Middleware
             services.AddTransient<IReposirotyDbProvider, RepositoryDbProvider>();
             services.AddTransient<IPeliculaRepository, PeliculaRepository>();
             services.AddTransient<IPeliculaService, PeliculaService>();
-            services.AddTransient<IPeliculasApplication, PeliculaApplication>();
+            services.AddTransient<IPeliculaApplication, PeliculaApplication>();
+
+            services.AddTransient<IRolRepository, RolRepository>();
+            services.AddTransient<IRolService, RolService>();
+            services.AddTransient<IRolApplication, RolApplication>();
+
+            services.AddTransient<IReposirotyDbProvider, RepositoryDbProvider>();
+            services.AddTransient<IUsuarioRepository, UsuarioRepository>();
+            services.AddTransient<IUsuarioService, UsuarioService>();
+            services.AddTransient<IUsuarioApplication, UsuarioApplication>();
 
             return services;
         }

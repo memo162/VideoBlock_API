@@ -1,5 +1,4 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using Microsoft.Extensions.Configuration;
 using Models;
 using Models.Exceptions;
 using Respository.Interfaces;
@@ -51,6 +50,19 @@ namespace Respository
         {
             using (var dbContext = _reposirotyDbProvider.GetDbContext())
             {
+                var entityPelicula = await dbContext.Peliculas.Where(p => p.Id == pelicula.Id).FirstOrDefaultAsync();
+                if (entityPelicula == null)
+                {
+                    throw new NotFoundDBException($"Entity Pelicula with Id: {pelicula.Id} not found");
+                }
+
+                entityPelicula.Eliminado = true;
+                dbContext.Update(entityPelicula);
+                await dbContext.SaveChangesAsync();
+            }
+
+            using (var dbContext = _reposirotyDbProvider.GetDbContext())
+            {
                 pelicula.FechaActualizacion = DateTime.UtcNow;
 
                 dbContext.Entry(pelicula).State = EntityState.Modified;
@@ -71,7 +83,7 @@ namespace Respository
                 var entityPelicula = await dbContext.Peliculas.Where(p => p.Id == id).FirstOrDefaultAsync();
                 if (entityPelicula == null) 
                 {
-                    throw new NotFoundDBException($"Entity with Id: {id} not found");
+                    throw new NotFoundDBException($"Entity Pelicula with Id: {id} not found");
                 }
 
                 entityPelicula.Eliminado = true;

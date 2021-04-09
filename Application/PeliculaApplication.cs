@@ -1,15 +1,12 @@
-﻿
-using Application.Interfaces;
+﻿using Application.Interfaces;
 using Models;
-using Services;
 using Services.Interfaces;
-using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 
 namespace Application
 {
-    public class PeliculaApplication : IPeliculasApplication
+    public class PeliculaApplication : IPeliculaApplication
     {
 
         public readonly IPeliculaService _peliculaService;

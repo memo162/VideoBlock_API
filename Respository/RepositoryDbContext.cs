@@ -13,6 +13,8 @@ namespace Respository
         }
 
         public DbSet<Pelicula> Peliculas { get; set; }
+        public DbSet<Rol> Roles { get; set; }
+        public DbSet<Usuario> Usuarios { get; set; }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
