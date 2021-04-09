@@ -2,6 +2,7 @@
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Filters;
 using Microsoft.AspNetCore.Mvc.ModelBinding;
+using Microsoft.Extensions.Logging;
 using Models.Exceptions;
 
 namespace VideoBlock_API.Filters
@@ -9,10 +10,13 @@ namespace VideoBlock_API.Filters
     public class ExceptionHandlerFilter : IExceptionFilter
     {
         private readonly IWebHostEnvironment _webHostEnvironment;
+        private readonly ILogger<ExceptionHandlerFilter> _logger;
 
-        public ExceptionHandlerFilter(IWebHostEnvironment webHostEnvironment)
+        public ExceptionHandlerFilter(IWebHostEnvironment webHostEnvironment,
+            ILogger<ExceptionHandlerFilter> logger)
         {
             _webHostEnvironment = webHostEnvironment;
+            _logger = logger;
         }
 
         public void OnException(ExceptionContext context)
@@ -27,6 +31,7 @@ namespace VideoBlock_API.Filters
             else 
             {
                 context.Result = new JsonResult(exceptionReturnMessage);
+                _logger.LogError(0, context.Exception, exceptionReturnMessage);
             }
         }
     }
