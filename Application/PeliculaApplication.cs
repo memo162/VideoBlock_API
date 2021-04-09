@@ -41,19 +41,9 @@ namespace Application
             }
         }
 
-        public async Task<bool> Delete(int id) 
+        public async Task Delete(int id) 
         {
-            try
-            {
-                await _peliculaService.Delete(id);
-                return true;
-            }
-            catch (Exception)
-            {
-                return false;
-                throw;
-            }
-
+            await _peliculaService.Delete(id);
         }
     }
 }

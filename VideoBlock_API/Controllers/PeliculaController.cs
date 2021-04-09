@@ -1,10 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+﻿using System.Threading.Tasks;
 using Application.Interfaces;
 using Microsoft.AspNetCore.Mvc;
 using Models;
+using VideoBlock_API.Filters;
 
 // For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 
@@ -12,6 +10,7 @@ namespace VideoBlock_API.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
+    [TypeFilter(typeof(ExceptionHandlerFilter))]
     public class PeliculaController : ControllerBase
     {
         private readonly IPeliculasApplication _peliculaApplication;
@@ -69,12 +68,8 @@ namespace VideoBlock_API.Controllers
         [HttpDelete("{id}")]
         public async Task<IActionResult> Delete(int id)
         {
-            if (await _peliculaApplication.Delete(id)) 
-            {
-                return Ok();
-            }
-
-            return NotFound();
+            await _peliculaApplication.Delete(id);
+            return Ok();
         }
     }
 }

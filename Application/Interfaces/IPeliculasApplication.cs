@@ -12,6 +12,6 @@ namespace Application.Interfaces
 
         Task<Pelicula> Post(Pelicula pelicula);
 
-        Task<bool> Delete(int id);
+        Task Delete(int id);
     }
 }
