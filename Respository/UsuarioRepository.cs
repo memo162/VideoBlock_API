@@ -11,9 +11,9 @@ namespace Respository
 {
     public class UsuarioRepository : IUsuarioRepository
     {
-        private readonly IReposirotyDbProvider _reposirotyDbProvider;
+        private readonly IRepositoryDbProvider _reposirotyDbProvider;
 
-        public UsuarioRepository(IReposirotyDbProvider reposirotyDbProvider)
+        public UsuarioRepository(IRepositoryDbProvider reposirotyDbProvider)
         {
             _reposirotyDbProvider = reposirotyDbProvider;
         }

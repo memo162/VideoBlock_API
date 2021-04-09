@@ -11,9 +11,9 @@ namespace Respository
 {
     public class RolRepository : IRolRepository
     {
-        private readonly IReposirotyDbProvider _reposirotyDbProvider;
+        private readonly IRepositoryDbProvider _reposirotyDbProvider;
 
-        public RolRepository(IReposirotyDbProvider reposirotyDbProvider)
+        public RolRepository(IRepositoryDbProvider reposirotyDbProvider)
         {
             _reposirotyDbProvider = reposirotyDbProvider;
         }

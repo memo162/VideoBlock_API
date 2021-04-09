@@ -12,7 +12,7 @@ namespace VideoBlock_API.Middleware
     {
         public static IServiceCollection AddDependency(this IServiceCollection services)
         {
-            services.AddTransient<IReposirotyDbProvider, RepositoryDbProvider>();
+            services.AddTransient<IRepositoryDbProvider, RepositoryDbProvider>();
             services.AddTransient<IPeliculaRepository, PeliculaRepository>();
             services.AddTransient<IPeliculaService, PeliculaService>();
             services.AddTransient<IPeliculaApplication, PeliculaApplication>();
@@ -21,10 +21,15 @@ namespace VideoBlock_API.Middleware
             services.AddTransient<IRolService, RolService>();
             services.AddTransient<IRolApplication, RolApplication>();
 
-            services.AddTransient<IReposirotyDbProvider, RepositoryDbProvider>();
+            services.AddTransient<IRepositoryDbProvider, RepositoryDbProvider>();
             services.AddTransient<IUsuarioRepository, UsuarioRepository>();
             services.AddTransient<IUsuarioService, UsuarioService>();
             services.AddTransient<IUsuarioApplication, UsuarioApplication>();
+
+            services.AddTransient<IRepositoryDbProvider, RepositoryDbProvider>();
+            services.AddTransient<IReservaRepository, ReservaRepository>();
+            services.AddTransient<IReservaService, ReservaService>();
+            services.AddTransient<IReservaApplication, ReservaApplication>();
 
             return services;
         }

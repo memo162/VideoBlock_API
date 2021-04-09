@@ -11,9 +11,9 @@ namespace Respository
 {
     public class PeliculaRepository : IPeliculaRepository
     {
-        private readonly IReposirotyDbProvider _reposirotyDbProvider;
+        private readonly IRepositoryDbProvider _reposirotyDbProvider;
 
-        public PeliculaRepository(IReposirotyDbProvider reposirotyDbProvider)
+        public PeliculaRepository(IRepositoryDbProvider reposirotyDbProvider)
         {
             _reposirotyDbProvider = reposirotyDbProvider;
         }

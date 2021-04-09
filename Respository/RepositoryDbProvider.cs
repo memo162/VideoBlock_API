@@ -5,7 +5,7 @@ using System.Text;
 
 namespace Respository
 {
-    public class RepositoryDbProvider : IReposirotyDbProvider
+    public class RepositoryDbProvider : IRepositoryDbProvider
     {
         private readonly IConfiguration _configuration;
 
