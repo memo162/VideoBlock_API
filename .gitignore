@@ -35,3 +35,5 @@ msbuild.wrn
 
 # Visual Studio 2015
 .vs/
+/VideoBlock_API/log-*
+/VideoBlock_API/log-*
