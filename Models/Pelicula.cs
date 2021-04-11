@@ -18,6 +18,9 @@ namespace Models
         public decimal Costo { get; set; }
 
         [Column("Cantidad_Inventario")]
-        public int Cantidad { get; set; }
+        public int CantidadInventario { get; set; }
+
+        [NotMapped]
+        public int CantidadDisponibles { get; set; }
     }
 }

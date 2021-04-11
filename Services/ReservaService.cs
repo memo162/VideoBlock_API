@@ -17,6 +17,11 @@ namespace Services
 
         public async Task<Reserva> Create(Reserva reserva)
         {
+            var reservasUsuario = await _reservaRepository.Get(new Usuario { Id = reserva.UsuarioId });
+            if (reservasUsuario != null && reservasUsuario.Exists(x => x.PeliculaId == reserva.PeliculaId)) {
+                throw new System.Exception("El usuario ya tiene una reserva activa para esta pelicula.");
+            }
+
             return await _reservaRepository.Create(reserva);
         }
 

@@ -12,11 +12,8 @@ namespace Models
         [Column("IdUsuario")]
         public int UsuarioId { get; set; }
 
-        [Column("FechaDeReserva")]
-        public DateTime? FechaDeReserva { get; set; }
-
-        [Column("DiasDeReserva")]
-        public int DiasDeReserva { get; set; }
+        [Column("FechaDeEntrega")]
+        public DateTime? FechaDeEntrega { get; set; }
 
         [Column("Cerrada")]
         public bool Cerrada { get; set; }

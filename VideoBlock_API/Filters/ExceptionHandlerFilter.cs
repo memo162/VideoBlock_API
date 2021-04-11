@@ -22,7 +22,7 @@ namespace VideoBlock_API.Filters
         public void OnException(ExceptionContext context)
         {
             var exceptionReturnMessage = $"Internal Error at { _webHostEnvironment.ApplicationName } " +
-                    $"type: { context.Exception.GetType() } ";
+                    $"type: { context.Exception.GetType() } message: {context.Exception.Message}";
 
             if (context.Exception is NotFoundDBException)
             {

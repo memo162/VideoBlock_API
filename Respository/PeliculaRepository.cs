@@ -30,7 +30,13 @@ namespace Respository
         {
             using (var dbContext = _reposirotyDbProvider.GetDbContext())
             {
-                return await dbContext.Peliculas.Where(p => p.Id == id).FirstOrDefaultAsync();
+                var reservasByPelicula = await dbContext.Reservas.Where(p => p.PeliculaId == id)?.ToListAsync();
+                var pelicula = await dbContext.Peliculas.Where(p => p.Id == id).FirstOrDefaultAsync();
+                if (pelicula != null) 
+                {
+                    pelicula.CantidadDisponibles = pelicula.CantidadInventario - (reservasByPelicula?.Count() ?? 0);
+                } 
+                return pelicula;
             }
         }
 

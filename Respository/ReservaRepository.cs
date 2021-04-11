@@ -33,6 +33,15 @@ namespace Respository
             }
         }
 
+        public async Task<List<Reserva>> Get(Usuario usuario)
+        {
+            using (var dbContext = _reposirotyDbProvider.GetDbContext())
+            {
+                return await dbContext.Reservas.Where(p => p.UsuarioId == usuario.Id && p.Cerrada == false && p.Eliminado == false)
+                    .Include(reserva => reserva.Pelicula).Include(reserva => reserva.Usuario).ToListAsync();
+            }
+        }
+
         public async Task<Reserva> Create(Reserva reserva)
         {
             using (var dbContext = _reposirotyDbProvider.GetDbContext())
